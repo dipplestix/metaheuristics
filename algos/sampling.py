@@ -15,7 +15,7 @@ def tournament_selection(population, n, p):
                 loop_p = math.floor(p)
         else:
             loop_p = p
-        contestants = [random.choice(population) for x in range(loop_p)]
+        contestants = random.sample(population, loop_p)
         contestants.sort(key=lambda x: x.fitness, reverse=True)
         winners.append(contestants[0])
     return winners
